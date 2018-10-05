@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "de.iteconomics.grpc.sample";
+option java_outer_classname = "StreamServiceProto";
+option objc_class_prefix = "RTG";
+
+package sampleservices;
+
+service StreamService {
+    rpc stream(StreamRequest) returns (stream StreamResponse) {}
+}
+
+message StreamRequest {
+    int32 number = 1;
+}
+
+message StreamResponse {
+    string text = 1;
+  }
